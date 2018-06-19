@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 -c "print(\'Hello\')"' 
+                sh 'python3 "print(\'Hello\')"' 
             }
         }
     }
