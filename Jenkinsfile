@@ -11,9 +11,14 @@ pipeline {
                 sh 'pip install --no-cache-dir -r requirements.txt' 
             }
         }
-        stage('Build') { 
+        stage('Test') { 
             steps {
                 sh 'python3 -m unittest discover --verbose' 
+            }
+        }
+        stage('Create Dockerfile') {
+            steps {
+                sh 'docker build .'
             }
         }
     }
