@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python3 "print(\'Hello\')"' 
+                sh 'python3 -m unittest discover --verbose' 
             }
         }
     }
