@@ -17,11 +17,7 @@ pipeline {
             }
         }
         stage('Create Dockerfile') {
-            agent {
-                docker {
-                    image 'docker'
-                }
-            }
+            agent none
             steps {
                 sh 'docker build .'
             }
