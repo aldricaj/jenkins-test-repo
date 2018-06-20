@@ -18,6 +18,7 @@ pipeline {
         }
         
         stage('Build docker image') {
+            agent dev-server
             steps {
                 sh 'docker ps'   
             }
