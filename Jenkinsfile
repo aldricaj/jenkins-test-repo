@@ -16,5 +16,11 @@ pipeline {
                 sh 'python3 -m unittest discover --verbose' 
             }
         }
+        
+        stage('Build docker image') {
+            steps {
+                sh 'docker ps'   
+            }
+        }
     }
 }
