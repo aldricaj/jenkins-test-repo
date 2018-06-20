@@ -18,7 +18,9 @@ pipeline {
         }
         
         stage('Build docker image') {
-            agent dev-server
+            agent docker {
+                image benhall/dind-jenkins-agent
+            }
             steps {
                 sh 'docker ps'   
             }
