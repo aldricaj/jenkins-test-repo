@@ -1,23 +1,24 @@
 pipeline {
     
     stages {
-        agent {
-        docker {
-            image 'python:3.6.4' 
-        }
-    }
+        
         stage('Install packages') { 
-            
+            agent {
+                docker {
+                    image 'python:3.6.4' 
+                }
+            }
             steps {
                 sh 'pip install --no-cache-dir -r requirements.txt' 
             }
         }
-        agent {
+        
+        stage('Test') { 
+            agent {
         docker {
             image 'python:3.6.4' 
         }
     }
-        stage('Test') { 
             steps {
                 sh 'python3 -m unittest discover --verbose' 
             }
