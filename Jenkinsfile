@@ -16,11 +16,5 @@ pipeline {
                 sh 'python3 -m unittest discover --verbose' 
             }
         }
-        stage('Create Dockerfile') {
-            agent none
-            steps {
-                sh 'docker build .'
-            }
-        }
     }
 }
