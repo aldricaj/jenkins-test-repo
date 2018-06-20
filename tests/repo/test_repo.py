@@ -6,4 +6,4 @@ class TestRepo(unittest.TestCase):
         self.repo = repo
 
     def test_get_return(self):
-        self.assertEqual(self.repo.get(), 1233)
+        self.assertEqual(self.repo.get(), 123)
