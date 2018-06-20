@@ -19,7 +19,7 @@ pipeline {
         
         stage('Build docker image') {
             agent { docker {
-                image 'benhall/dind-jenkins-agent'
+                image 'benhall/dind-jenkins-agent:latest'
             } }
             steps {
                 sh 'docker ps'   
