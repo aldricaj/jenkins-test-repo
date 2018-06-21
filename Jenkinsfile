@@ -29,7 +29,9 @@ pipeline {
                 image 'benhall/dind-jenkins-agent:latest'
             } }
             steps {
-                sh 'docker ps'   
+	            sh 'docker login'
+                sh 'docker build . -t aldricaj/image:latest'   
+	            sh 'docker push aldricaj/image:latest' 
             }
         }
     }
