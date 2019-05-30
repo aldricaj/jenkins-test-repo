@@ -1,4 +1,4 @@
-FROM python:3.6.5-jessie
+FROM python:3.6.5
 
 EXPOSE 5080
 WORKDIR /usr/src/app
